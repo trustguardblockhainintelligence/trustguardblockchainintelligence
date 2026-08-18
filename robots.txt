@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trustguardblockhainintelligence.github.io/trustguardblockchainintelligence/sitemap.xml
