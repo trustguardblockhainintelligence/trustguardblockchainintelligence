@@ -1,921 +1,1283 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>TrustGuard Blockchain Intelligence | Digital-Asset Fraud Analysis</title>
 
-<meta name="description" content="TrustGuard Blockchain Intelligence provides blockchain transaction analysis, digital evidence documentation, crypto fraud assessment, wallet security guidance, fraud awareness, and recovery and reporting advisory.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+    <title>TrustGuard Blockchain Intelligence | Crypto Fraud Analysis & Recovery Advisory</title>
 
-    html {
-        scroll-behavior: smooth;
-    }
+    <meta name="description"
+        content="TrustGuard Blockchain Intelligence provides blockchain transaction analysis, crypto fraud case assessment, digital evidence documentation, wallet security guidance, fraud awareness, and legitimate recovery and reporting advisory.">
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.6;
-        color: #172033;
-        background: #f5f8fc;
-    }
+    <meta name="robots" content="index, follow">
 
-    a {
-        text-decoration: none;
-    }
+    <meta name="author" content="TrustGuard Blockchain Intelligence">
 
-    .container {
-        width: 90%;
-        max-width: 1150px;
-        margin: auto;
-    }
+    <meta name="keywords"
+        content="blockchain analysis, cryptocurrency fraud, crypto scam analysis, digital evidence, wallet security, crypto fraud reporting, recovery advisory, blockchain intelligence">
 
-    /* NAVIGATION */
+    <meta property="og:title"
+        content="TrustGuard Blockchain Intelligence | Crypto Fraud Analysis & Recovery Advisory">
 
-    nav {
-        background: #07162f;
-        padding: 18px 0;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    }
+    <meta property="og:description"
+        content="Evidence-based blockchain analysis, digital evidence documentation, security guidance, fraud awareness, and legitimate recovery and reporting advisory.">
 
-    .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    <meta property="og:type" content="website">
 
-    .logo {
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-        letter-spacing: .2px;
-    }
+    <meta name="theme-color" content="#07162f">
 
-    .nav-links {
-        display: flex;
-        gap: 19px;
-    }
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%2307162f' d='M50 5 90 20v28c0 25-17 40-40 47C27 88 10 73 10 48V20z'/%3E%3Cpath fill='none' stroke='%239fd0ff' stroke-width='7' d='M30 50 44 64 72 34'/%3E%3C/svg%3E">
 
-    .nav-links a {
-        color: #eef4ff;
-        font-size: 14px;
-    }
+    <style>
 
-    .nav-links a:hover {
-        color: #8ec5ff;
-    }
-
-    /* HERO */
-
-    .hero {
-        position: relative;
-        min-height: 650px;
-        display: flex;
-        align-items: center;
-        color: white;
-        overflow: hidden;
-
-        background:
-            linear-gradient(rgba(5,18,42,0.80), rgba(5,18,42,0.88)),
-            url("Screenshot_2026-07-14-06-07-35-74_40deb401b9ffe8e1df2f1cc5ba480b12%20%281%29%20%281%29.jpg");
-
-        background-size: cover;
-        background-position: center;
-    }
-
-    .hero-content {
-        max-width: 820px;
-        padding: 80px 0;
-    }
-
-    .hero-label {
-        display: inline-block;
-        padding: 7px 13px;
-        border: 1px solid rgba(255,255,255,0.35);
-        border-radius: 30px;
-        font-size: 13px;
-        margin-bottom: 20px;
-        background: rgba(255,255,255,0.08);
-    }
-
-    .hero h1 {
-        font-size: 48px;
-        line-height: 1.12;
-        margin-bottom: 22px;
-    }
-
-    .hero h1 span {
-        color: #9fd0ff;
-    }
-
-    .hero p {
-        font-size: 19px;
-        color: #e5edf8;
-        max-width: 760px;
-        margin-bottom: 30px;
-    }
-
-    .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 14px 23px;
-        border-radius: 6px;
-        font-weight: bold;
-    }
-
-    .primary {
-        background: white;
-        color: #07162f;
-    }
-
-    .secondary {
-        border: 1px solid white;
-        color: white;
-    }
-
-    /* RECOVERY HIGHLIGHT */
-
-    .recovery {
-        background: white;
-        padding: 60px 0;
-        border-bottom: 1px solid #e3e9f1;
-    }
-
-    .recovery-box {
-        background: #eef5ff;
-        border-left: 5px solid #174f91;
-        padding: 30px;
-        border-radius: 8px;
-    }
-
-    .recovery-box h2 {
-        color: #0a2850;
-        margin-bottom: 14px;
-        font-size: 28px;
-    }
-
-    .recovery-box p {
-        color: #48566a;
-        margin-bottom: 14px;
-    }
-
-    .recovery-note {
-        font-weight: bold;
-        color: #0a2850 !important;
-    }
-
-    /* GENERAL SECTIONS */
-
-    section {
-        padding: 75px 0;
-    }
-
-    .section-title {
-        text-align: center;
-        margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-        font-size: 32px;
-        margin-bottom: 12px;
-        color: #0a1d3a;
-    }
-
-    .section-title p {
-        max-width: 720px;
-        margin: auto;
-        color: #5c6879;
-    }
-
-    /* ABOUT */
-
-    .about {
-        background: white;
-    }
-
-    .about-text {
-        max-width: 880px;
-        margin: auto;
-        font-size: 17px;
-        color: #4e5a6c;
-    }
-
-    .about-text p {
-        margin-bottom: 18px;
-    }
-
-    /* SERVICES */
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-    }
-
-    .service-card {
-        background: white;
-        padding: 28px;
-        border-radius: 10px;
-        border: 1px solid #e0e6ee;
-        box-shadow: 0 4px 15px rgba(20,40,70,0.04);
-    }
-
-    .service-card h3 {
-        color: #0a2850;
-        margin-bottom: 12px;
-        font-size: 19px;
-    }
-
-    .service-card p {
-        color: #5b6676;
-    }
-
-    /* HOW WE HELP */
-
-    .process {
-        background: white;
-    }
-
-    .process-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .process-card {
-        text-align: center;
-        padding: 25px 15px;
-    }
-
-    .number {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: #0b2b55;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px;
-        font-weight: bold;
-    }
-
-    .process-card h3 {
-        margin-bottom: 8px;
-        color: #102544;
-    }
-
-    .process-card p {
-        color: #657082;
-        font-size: 14px;
-    }
-
-    /* AWARENESS */
-
-    .awareness {
-        background: #edf3f9;
-    }
-
-    .awareness-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-    }
-
-    .awareness-card {
-        background: white;
-        padding: 25px;
-        border-radius: 10px;
-        border: 1px solid #e1e7ef;
-    }
-
-    .awareness-card h3 {
-        margin-bottom: 10px;
-        color: #0a2850;
-    }
-
-    .awareness-card p {
-        color: #5d6878;
-    }
-
-    /* SECURITY */
-
-    .security {
-        background: white;
-    }
-
-    .security-list {
-        max-width: 820px;
-        margin: auto;
-    }
-
-    .security-list div {
-        padding: 18px;
-        margin-bottom: 12px;
-        background: #f5f8fc;
-        border: 1px solid #e1e7ef;
-        border-radius: 7px;
-    }
-
-    .security-list strong {
-        color: #0a2850;
-    }
-
-    /* DISCLAIMER */
-
-    .disclaimer {
-        background: #fff8e8;
-        border-top: 1px solid #eadcb8;
-        border-bottom: 1px solid #eadcb8;
-    }
-
-    .disclaimer-box {
-        max-width: 900px;
-        margin: auto;
-    }
-
-    .disclaimer h2 {
-        margin-bottom: 15px;
-        color: #624c16;
-    }
-
-    .disclaimer p {
-        color: #5f512f;
-        margin-bottom: 12px;
-    }
-
-    /* FAQ */
-
-    .faq {
-        max-width: 850px;
-        margin: auto;
-    }
-
-    details {
-        background: white;
-        margin-bottom: 12px;
-        padding: 18px 20px;
-        border-radius: 7px;
-        border: 1px solid #e1e6ed;
-    }
-
-    summary {
-        font-weight: bold;
-        cursor: pointer;
-        color: #0b2345;
-    }
-
-    details p {
-        margin-top: 12px;
-        color: #5d6878;
-    }
-
-    /* CONTACT */
-
-    .contact {
-        background: #07162f;
-        color: white;
-        text-align: center;
-    }
-
-    .contact h2 {
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-
-    .contact p {
-        color: #dbe4f0;
-        max-width: 720px;
-        margin: 0 auto 25px;
-    }
-
-    .contact-buttons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .contact-button {
-        padding: 14px 23px;
-        border-radius: 6px;
-        background: white;
-        color: #07162f;
-        font-weight: bold;
-    }
-
-    /* FOOTER */
-
-    footer {
-        background: #040d1d;
-        color: #b9c4d4;
-        text-align: center;
-        padding: 28px 0;
-        font-size: 13px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-        .nav-links {
-            display: none;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.65;
+            color: #172033;
+            background: #f5f8fc;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1160px;
+            margin: auto;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #07162f;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.18);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .brand-shield {
+            width: 35px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #12396a;
+            clip-path: polygon(50% 0%, 92% 15%, 86% 62%, 50% 100%, 14% 62%, 8% 15%);
+            color: #9fd0ff;
+            font-size: 19px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #e9f0fa;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #9fd0ff;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
-            min-height: 610px;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,17,39,0.94),
+                    rgba(4,17,39,0.78),
+                    rgba(4,17,39,0.88)
+                ),
+                url("Screenshot_2026-07-14-06-07-35-74_40deb401b9ffe8e1df2f1cc5ba480b12%20%281%29%20%281%29.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 90px 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.08);
+            color: #dcecff;
+            font-size: 13px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: 35px;
+            font-size: 52px;
+            line-height: 1.12;
+            margin-bottom: 22px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: #9fd0ff;
         }
 
         .hero p {
-            font-size: 17px;
+            max-width: 800px;
+            font-size: 19px;
+            color: #e4edf8;
+            margin-bottom: 32px;
         }
 
-        .services-grid,
-        .awareness-grid {
-            grid-template-columns: 1fr;
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
         }
 
-        .process-grid {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    @media (max-width: 500px) {
-
-        .process-grid {
-            grid-template-columns: 1fr;
+        .button {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
-        .section-title h2 {
-            font-size: 27px;
+        .button-primary {
+            background: white;
+            color: #07162f;
         }
 
-        .logo {
-            font-size: 15px;
+        .button-secondary {
+            color: white;
+            border: 1px solid rgba(255,255,255,0.8);
         }
 
-        .hero {
-            min-height: 650px;
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           TRUST STRIP
+        ========================== */
+
+        .trust-strip {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .trust-item {
+            padding: 24px;
+            text-align: center;
+            border-right: 1px solid #e3e8ef;
+        }
+
+        .trust-item:last-child {
+            border-right: none;
+        }
+
+        .trust-item strong {
+            display: block;
+            color: #0a2850;
+            margin-bottom: 5px;
+        }
+
+        .trust-item span {
+            font-size: 13px;
+            color: #667386;
+        }
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        section {
+            padding: 78px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            color: #0a1d3a;
+            font-size: 34px;
+            line-height: 1.2;
+            margin-bottom: 13px;
+        }
+
+        .section-heading p {
+            color: #5c6879;
+        }
+
+        /* =========================
+           RECOVERY
+        ========================== */
+
+        .recovery {
+            background: #ffffff;
         }
 
         .recovery-box {
-            padding: 22px;
+            background: #eef5ff;
+            border: 1px solid #d6e5f7;
+            border-left: 5px solid #174f91;
+            border-radius: 9px;
+            padding: 34px;
         }
-    }
-</style>
 
-</head><body><!-- NAVIGATION --><nav>
-    <div class="container nav-content">    <div class="logo">
-        TrustGuard Blockchain Intelligence
-    </div>
+        .recovery-box h2 {
+            color: #092852;
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
 
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#recovery">Recovery</a>
-        <a href="#process">How We Help</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-    </div>
+        .recovery-box p {
+            color: #4d5b6d;
+            margin-bottom: 15px;
+        }
 
-</div>
+        .recovery-box .important {
+            color: #092852;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
 
-</nav><!-- HERO --><header class="hero"><div class="container hero-content">
+        /* =========================
+           ABOUT
+        ========================== */
 
-    <div class="hero-label">
-        Digital-Asset Fraud Analysis & Victim Support
-    </div>
+        .about {
+            background: #f5f8fc;
+        }
 
-    <h1>
-        Turning Blockchain Evidence Into <span>Clarity & Direction</span>
-    </h1>
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            color: #4e5a6c;
+            font-size: 17px;
+        }
 
-    <p>
-        TrustGuard Blockchain Intelligence helps individuals and businesses better understand suspected cryptocurrency fraud through blockchain transaction analysis, digital evidence documentation, security guidance, fraud awareness, and responsible recovery and reporting advisory.
-    </p>
+        .about-content p {
+            margin-bottom: 18px;
+        }
 
-    <div class="buttons">
+        /* =========================
+           SERVICES
+        ========================== */
 
-        <a class="button primary" href="#recovery">
-            Explore Recovery Options
-        </a>
+        .services {
+            background: white;
+        }
 
-        <a class="button secondary" href="#contact">
-            Contact TrustGuard
-        </a>
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
 
-    </div>
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e0e7ef;
+            border-radius: 9px;
+            padding: 29px;
+            box-shadow: 0 5px 20px rgba(15,35,65,0.04);
+        }
 
-</div>
+        .service-number {
+            color: #467bb0;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
 
-</header><!-- RECOVERY --><section class="recovery" id="recovery"><div class="container">
+        .service-card h3 {
+            color: #0a2850;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
 
-    <div class="recovery-box">
+        .service-card p {
+            color: #5b6676;
+        }
 
-        <h2>
-            Possible Recovery Through Legitimate Legal & Reporting Procedures
-        </h2>
+        /* =========================
+           PROCESS
+        ========================== */
 
-        <p>
-            Losing cryptocurrency does not necessarily mean every legitimate avenue has been exhausted. Depending on the circumstances, available evidence, transaction history, jurisdiction, and the parties involved, victims may have investigative, reporting, civil, or other lawful avenues that could potentially assist with pursuing recovery.
-        </p>
+        .process {
+            background: #f0f5fa;
+        }
 
-        <p>
-            TrustGuard Blockchain Intelligence helps clients understand available blockchain evidence, organize relevant records, identify appropriate reporting channels, and, where appropriate, coordinate referrals to qualified lawyers, cybersecurity professionals, blockchain-forensics specialists, cryptocurrency exchanges, or relevant authorities.
-        </p>
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
 
-        <p>
-            All recovery-related assistance is approached through legitimate legal, investigative, and reporting procedures. We do not encourage unlawful access, retaliation, unauthorized account access, or attempts to reverse blockchain transactions through improper means.
-        </p>
+        .process-card {
+            text-align: center;
+            padding: 20px;
+        }
 
-        <p class="recovery-note">
-            Important: Possible recovery is not the same as guaranteed recovery. No outcome can be promised because each case depends on its individual evidence, circumstances, jurisdiction, and the actions of relevant professionals, platforms, or authorities.
-        </p>
+        .process-number {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #0b2b55;
+            color: white;
+            font-weight: bold;
+        }
 
-    </div>
+        .process-card h3 {
+            color: #102544;
+            margin-bottom: 8px;
+        }
 
-</div>
+        .process-card p {
+            color: #657082;
+            font-size: 14px;
+        }
 
-</section><!-- ABOUT --><section class="about" id="about"><div class="container">
+        /* =========================
+           AWARENESS
+        ========================== */
 
-    <div class="section-title">
+        .awareness {
+            background: white;
+        }
 
-        <h2>About TrustGuard Blockchain Intelligence</h2>
+        .awareness-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-        <p>
-            Evidence-based support for individuals and businesses dealing with cryptocurrency-related fraud concerns.
-        </p>
+        .awareness-card {
+            padding: 25px;
+            background: #f7f9fc;
+            border: 1px solid #e2e8ef;
+            border-radius: 8px;
+        }
 
-    </div>
+        .awareness-card h3 {
+            color: #0a2850;
+            margin-bottom: 8px;
+        }
 
-    <div class="about-text">
+        .awareness-card p {
+            color: #5c6879;
+        }
 
-        <p>
-            TrustGuard Blockchain Intelligence is a digital-asset fraud analysis and victim-support organization focused on helping individuals and businesses better understand cryptocurrency-related fraud.
-        </p>
+        /* =========================
+           SECURITY
+        ========================== */
 
-        <p>
-            We provide blockchain transaction analysis, evidence documentation, fraud-awareness education, wallet-security guidance, and advisory support for individuals who have experienced suspected cryptocurrency scams or unauthorized transactions.
-        </p>
+        .security {
+            background: #07162f;
+            color: white;
+        }
 
-        <p>
-            Our approach is evidence-based and transparent. We examine available information, explain what can and cannot be established from blockchain data, and help clients identify appropriate reporting, investigative, or professional avenues.
-        </p>
+        .security .section-heading h2 {
+            color: white;
+        }
 
-        <p>
-            Our mission is simple: to replace confusion with clarity, protect victims from further losses, and promote responsible approaches to digital-asset fraud investigation and possible recovery.
-        </p>
+        .security .section-heading p {
+            color: #cdd9e8;
+        }
 
-    </div>
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
 
-</div>
+        .security-card {
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.045);
+        }
 
-</section><!-- SERVICES --><section id="services"><div class="container">
+        .security-card h3 {
+            color: #9fd0ff;
+            margin-bottom: 8px;
+        }
 
-    <div class="section-title">
+        .security-card p {
+            color: #d4deea;
+        }
 
-        <h2>Our Services</h2>
+        /* =========================
+           FAQ
+        ========================== */
 
-        <p>
-            Practical analysis, documentation, education, security guidance, and advisory support for cryptocurrency-related fraud concerns.
-        </p>
+        .faq-section {
+            background: #f5f8fc;
+        }
 
-    </div>
+        .faq {
+            max-width: 880px;
+            margin: auto;
+        }
 
-    <div class="services-grid">
+        details {
+            background: white;
+            border: 1px solid #e1e7ee;
+            border-radius: 7px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+        }
 
-        <div class="service-card">
-            <h3>Blockchain Transaction Analysis</h3>
+        summary {
+            color: #0b2345;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        details p {
+            color: #5c6879;
+            margin-top: 12px;
+        }
+
+        /* =========================
+           DISCLAIMER
+        ========================== */
+
+        .notice {
+            background: #fff8e8;
+            border-top: 1px solid #eadcb8;
+            border-bottom: 1px solid #eadcb8;
+        }
+
+        .notice-box {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .notice h2 {
+            color: #624c16;
+            margin-bottom: 15px;
+        }
+
+        .notice p {
+            color: #5f512f;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 820px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            color: #0a1d3a;
+            font-size: 34px;
+            margin-bottom: 13px;
+        }
+
+        .contact p {
+            color: #5c6879;
+            margin-bottom: 25px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 6px;
+            background: #0b2b55;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-button.telegram {
+            background: #174f91;
+        }
+
+        .email-address {
+            margin-top: 18px;
+            color: #0a2850 !important;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #040d1d;
+            color: #b9c4d4;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 13px;
+        }
+
+        footer p {
+            margin-bottom: 7px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .service-grid,
+            .awareness-grid,
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .brand {
+                font-size: 15px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-heading h2,
+            .contact h2 {
+                font-size: 28px;
+            }
+
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-item {
+                border-right: none;
+                border-bottom: 1px solid #e3e8ef;
+            }
+
+            .trust-item:last-child {
+                border-bottom: none;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recovery-box {
+                padding: 23px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="container nav-inner">
+
+            <a href="#top" class="brand">
+                <span class="brand-shield">✓</span>
+                <span>TrustGuard Blockchain Intelligence</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#recovery">Recovery</a>
+                <a href="#process">Process</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <main id="top">
+
+        <!-- HERO -->
+
+        <header class="hero">
+
+            <div class="container hero-content">
+
+                <div class="eyebrow">
+                    Digital-Asset Fraud Analysis & Victim Support
+                </div>
+
+                <h1>
+                    Clarity When <span>Digital Assets</span> Are at Risk
+                </h1>
+
+                <p>
+                    TrustGuard Blockchain Intelligence helps individuals and businesses understand suspected cryptocurrency fraud through blockchain transaction analysis, digital evidence documentation, security guidance, fraud awareness, and responsible recovery and reporting advisory.
+                </p>
+
+                <div class="button-row">
+
+                    <a href="#recovery" class="button button-primary">
+                        Explore Recovery Options
+                    </a>
+
+                    <a href="#contact" class="button button-secondary">
+                        Contact TrustGuard
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- TRUST / APPROACH -->
+
+        <section class="trust-strip">
+
+            <div class="container trust-grid">
+
+                <div class="trust-item">
+                    <strong>Evidence-Based</strong>
+                    <span>Focused on available blockchain and case information.</span>
+                </div>
+
+                <div class="trust-item">
+                    <strong>Transparent</strong>
+                    <span>Clear about what blockchain evidence can and cannot establish.</span>
+                </div>
+
+                <div class="trust-item">
+                    <strong>Responsible</strong>
+                    <span>Recovery-related guidance follows legitimate procedures.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECOVERY -->
+
+        <section class="recovery" id="recovery">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <h2>Possible Recovery Through Legitimate Legal & Reporting Procedures</h2>
+
+                    <p>
+                        Understanding your available options can be an important first step after a cryptocurrency loss.
+                    </p>
+                </div>
+
+                <div class="recovery-box">
+
+                    <p>
+                        Losing cryptocurrency does not necessarily mean every legitimate avenue has been exhausted. Depending on the circumstances, available evidence, transaction history, jurisdiction, and the parties involved, victims may have investigative, reporting, civil, or other lawful avenues that could potentially assist with pursuing recovery.
+                    </p>
+
+                    <p>
+                        TrustGuard Blockchain Intelligence helps clients organize relevant information, understand blockchain activity, document evidence, identify appropriate reporting channels, and, where appropriate, coordinate referrals to qualified lawyers, cybersecurity professionals, blockchain-forensics specialists, cryptocurrency exchanges, or relevant authorities.
+                    </p>
+
+                    <p>
+                        Recovery-related assistance is approached strictly through legitimate legal, investigative, and reporting procedures. We do not encourage unauthorized access, retaliation, unlawful activity, or attempts to reverse blockchain transactions through improper means.
+                    </p>
+
+                    <p class="important">
+                        Important: We cannot guarantee the recovery of lost cryptocurrency or promise a particular outcome. Each case depends on its individual evidence, circumstances, jurisdiction, and the actions available to relevant professionals, platforms, or authorities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="about" id="about">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>About TrustGuard Blockchain Intelligence</h2>
+
+                    <p>
+                        Helping victims and organizations replace uncertainty with clearer information and responsible next steps.
+                    </p>
+
+                </div>
+
+                <div class="about-content">
+
+                    <p>
+                        TrustGuard Blockchain Intelligence is a digital-asset fraud analysis and victim-support organization focused on helping individuals and businesses better understand cryptocurrency-related fraud.
+                    </p>
+
+                    <p>
+                        We provide blockchain transaction analysis, crypto fraud case assessment, digital evidence documentation, wallet and digital-asset security guidance, scam-awareness education, recovery and reporting advisory, and professional referral and case coordination where appropriate.
+                    </p>
+
+                    <p>
+                        Our approach is evidence-based and transparent. We examine available information, explain what can and cannot reasonably be established from blockchain data, and help clients identify appropriate reporting, investigative, security, or professional avenues.
+                    </p>
+
+                    <p>
+                        Our mission is simple: to replace confusion with clarity, help protect victims from further losses, and promote responsible approaches to digital-asset fraud investigation and possible recovery.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+
+        <section class="services" id="services">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>Our Services</h2>
+
+                    <p>
+                        Structured support for understanding, documenting, and responding to cryptocurrency-related fraud concerns.
+                    </p>
+
+                </div>
+
+                <div class="service-grid">
+
+                    <article class="service-card">
+
+                        <div class="service-number">01</div>
+
+                        <h3>Blockchain Transaction Analysis</h3>
+
+                        <p>
+                            Reviewing cryptocurrency transactions, wallet activity, transaction IDs, and publicly available blockchain data to help clients understand digital-asset movement.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">02</div>
+
+                        <h3>Crypto Fraud Case Assessment</h3>
+
+                        <p>
+                            Helping clients organize and understand the circumstances surrounding suspected cryptocurrency fraud or unauthorized digital-asset transactions.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">03</div>
+
+                        <h3>Digital Evidence Documentation</h3>
+
+                        <p>
+                            Organizing transaction IDs, wallet addresses, communications, screenshots, platform information, dates, and other relevant evidence into a clearer case record.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">04</div>
+
+                        <h3>Wallet & Digital Asset Security Guidance</h3>
+
+                        <p>
+                            Helping clients understand common wallet-security threats and practical measures that may help protect remaining digital assets.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">05</div>
+
+                        <h3>Scam & Fraud Awareness</h3>
+
+                        <p>
+                            Education about phishing, fake investment platforms, impersonation, romance scams, fraudulent offers, and other common cryptocurrency-related scams.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">06</div>
+
+                        <h3>Recovery & Reporting Advisory</h3>
+
+                        <p>
+                            Helping clients understand legitimate reporting channels and possible investigative or legal next steps after cryptocurrency has been lost. Recovery outcomes cannot be guaranteed.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">07</div>
+
+                        <h3>Professional Referral & Case Coordination</h3>
+
+                        <p>
+                            Where appropriate, directing complex matters toward qualified lawyers, cybersecurity professionals, blockchain-forensics specialists, exchanges, or relevant authorities.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service-card">
+
+                        <div class="service-number">08</div>
+
+                        <h3>Case Information Guidance</h3>
+
+                        <p>
+                            Helping clients understand what available blockchain information may establish, what it cannot establish, and which questions may require additional professional investigation.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="process" id="process">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>How We Help</h2>
+
+                    <p>
+                        A structured approach designed to bring clarity to complex cryptocurrency-related incidents.
+                    </p>
+
+                </div>
+
+                <div class="process-grid">
+
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3>Understand</h3>
+                        <p>
+                            Review the circumstances and available information surrounding the incident.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3>Document</h3>
+                        <p>
+                            Organize transaction records, communications, screenshots, wallet addresses, and relevant evidence.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3>Analyze</h3>
+                        <p>
+                            Examine publicly available blockchain information and explain relevant findings and limitations.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3>Identify Options</h3>
+                        <p>
+                            Identify appropriate reporting, investigative, security, legal, or professional referral options.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRAUD AWARENESS -->
+
+        <section class="awareness">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>Scam & Fraud Awareness</h2>
+
+                    <p>
+                        Recognizing common tactics can help individuals avoid further losses.
+                    </p>
+
+                </div>
+
+                <div class="awareness-grid">
+
+                    <article class="awareness-card">
+                        <h3>Phishing</h3>
+                        <p>
+                            Fake websites, messages, emails, or links may be designed to obtain sensitive information or unauthorized account access.
+                        </p>
+                    </article>
+
+                    <article class="awareness-card">
+                        <h3>Fake Investment Platforms</h3>
+                        <p>
+                            Fraudulent platforms may display fabricated balances or profits and later demand additional payments before allowing withdrawals.
+                        </p>
+                    </article>
+
+                    <article class="awareness-card">
+                        <h3>Impersonation</h3>
+                        <p>
+                            Scammers may impersonate companies, professionals, customer-support representatives, investigators, or other trusted individuals.
+                        </p>
+                    </article>
+
+                    <article class="awareness-card">
+                        <h3>Romance & Social Engineering</h3>
+                        <p>
+                            Criminals may build relationships or trust online before introducing financial requests, investment opportunities, or cryptocurrency transfers.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY -->
+
+        <section class="security">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>Protect Your Remaining Digital Assets</h2>
+
+                    <p>
+                        If you believe you have been targeted by a cryptocurrency scam, protecting remaining assets should be a priority.
+                    </p>
+
+                </div>
+
+                <div class="security-grid">
+
+                    <article class="security-card">
+                        <h3>Never Share Private Keys</h3>
+                        <p>
+                            Legitimate investigators or advisors should not require your private key, seed phrase, or wallet recovery phrase.
+                        </p>
+                    </article>
+
+                    <article class="security-card">
+                        <h3>Beware of Recovery Scams</h3>
+                        <p>
+                            Previous victims are sometimes targeted again by people promising guaranteed recovery in exchange for additional money or sensitive information.
+                        </p>
+                    </article>
+
+                    <article class="security-card">
+                        <h3>Preserve Your Evidence</h3>
+                        <p>
+                            Keep transaction IDs, wallet addresses, communications, screenshots, dates, platform information, and other relevant records.
+                        </p>
+                    </article>
+
+                    <article class="security-card">
+                        <h3>Verify Professional Assistance</h3>
+                        <p>
+                            Be cautious of anyone demanding payment while promising a guaranteed result. Verify identities, credentials, and legitimate professional channels.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+
+        <section class="faq-section" id="faq">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2>Frequently Asked Questions</h2>
+
+                    <p>
+                        Clear answers about our approach to cryptocurrency-related fraud cases.
+                    </p>
+
+                </div>
+
+                <div class="faq">
+
+                    <details>
+                        <summary>Can TrustGuard guarantee cryptocurrency recovery?</summary>
+                        <p>
+                            No. We do not guarantee recovery or promise a particular outcome. We help clients understand available evidence and possible legitimate reporting, investigative, security, or legal avenues.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Do you need my private key or recovery phrase?</summary>
+                        <p>
+                            No. Never provide your private key, seed phrase, wallet recovery phrase, password, or authentication code to someone claiming to investigate or recover cryptocurrency.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>What information may be useful for an assessment?</summary>
+                        <p>
+                            Depending on the circumstances, useful information may include transaction IDs, wallet addresses, relevant communications, screenshots, dates, platform information, and other records connected to the incident.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Can a blockchain address identify a person?</summary>
+                        <p>
+                            Not automatically. Blockchain data can provide information about transactions and addresses, but identifying a person may require additional evidence or professional investigation.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>What happens after an assessment?</summary>
+                        <p>
+                            Depending on the available information, clients may receive an explanation of relevant findings and possible reporting, investigative, security, legal, or professional referral options.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Are recovery-related avenues always available?</summary>
+                        <p>
+                            No. Available options depend on the facts, evidence, transaction history, jurisdiction, parties involved, and the actions available to relevant professionals, platforms, or authorities.
+                        </p>
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMPORTANT NOTICE -->
+
+        <section class="notice">
+
+            <div class="container notice-box">
+
+                <h2>Important Information</h2>
+
+                <p>
+                    TrustGuard Blockchain Intelligence does not guarantee the recovery of lost cryptocurrency or promise that funds can be returned.
+                </p>
+
+                <p>
+                    Blockchain transactions are generally irreversible. Blockchain analysis may provide useful information about transaction activity, but it does not by itself guarantee identification of the person controlling an address or recovery of funds.
+                </p>
+
+                <p>
+                    We do not request private keys, wallet recovery phrases, passwords, authentication codes, or other credentials that could provide direct access to digital assets.
+                </p>
+
+                <p>
+                    Where appropriate, clients may be directed toward qualified lawyers, cybersecurity professionals, blockchain-forensics specialists, cryptocurrency exchanges, or relevant authorities.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="contact" id="contact">
+
+            <div class="container contact-box">
+
+                <h2>Contact TrustGuard Blockchain Intelligence</h2>
+
+                <p>
+                    If you need assistance understanding a suspected cryptocurrency fraud incident, transaction history, digital evidence, security concern, or possible reporting and recovery avenues, contact us for further information.
+                </p>
+
+                <div class="contact-buttons">
+
+                    <a class="contact-button"
+                       href="mailto:trustguardblockchainintelligen@gmail.com">
+                        Email TrustGuard
+                    </a>
+
+                    <a class="contact-button telegram"
+                       href="https://t.me/trustguardblockchainintelligence"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Contact on Telegram
+                    </a>
+
+                </div>
+
+                <p class="email-address">
+                    trustguardblockchainintelligen@gmail.com
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
             <p>
-                Reviewing cryptocurrency transactions, wallet activity, transaction IDs, and publicly available blockchain data to help clients understand the movement of digital assets.
+                © 2026 TrustGuard Blockchain Intelligence. All rights reserved.
             </p>
+
+            <p>
+                Digital-asset fraud analysis • Evidence documentation • Security guidance • Recovery & reporting advisory
+            </p>
+
         </div>
 
-        <div class="service-card">
-            <h3>Crypto Fraud Case Assessment</h3>
-            <p>
-                Helping clients organize and understand the circumstances surrounding suspected cryptocurrency fraud or unauthorized digital-asset transactions.
-            </p>
-        </div>
+    </footer>
 
-        <div class="service-card">
-            <h3>Digital Evidence Documentation</h3>
-            <p>
-                Organizing transaction IDs, wallet addresses, communications, screenshots, account information, and other relevant material into a clearer case record.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h3>Wallet & Digital Asset Security Guidance</h3>
-            <p>
-                Helping clients understand common wallet-security threats and practical steps that may help protect remaining digital assets.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h3>Scam & Fraud Awareness</h3>
-            <p>
-                Education about phishing, fake investment platforms, impersonation, romance scams, fraudulent offers, and other common cryptocurrency-related scams.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h3>Recovery & Reporting Advisory</h3>
-            <p>
-                Helping clients understand legitimate reporting channels and possible investigative or legal next steps after cryptocurrency has been lost. Recovery outcomes cannot be guaranteed.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h3>Professional Referral & Case Coordination</h3>
-            <p>
-                Where appropriate, directing complex matters toward qualified lawyers, cybersecurity professionals, blockchain-forensics specialists, exchanges, or relevant authorities.
-            </p>
-        </div>
-
-        <div class="service-card">
-            <h3>Responsible Case Guidance</h3>
-            <p>
-                Helping clients understand what available blockchain information may establish, what it cannot establish, and which questions may require additional professional investigation.
-            </p>
-        </div>
-
-    </div>
-
-</div>
-
-</section><!-- HOW WE HELP --><section class="process" id="process"><div class="container">
-
-    <div class="section-title">
-
-        <h2>How We Help</h2>
-
-        <p>
-            A structured approach designed to help clients understand the evidence and identify appropriate next steps.
-        </p>
-
-    </div>
-
-    <div class="process-grid">
-
-        <div class="process-card">
-            <div class="number">1</div>
-            <h3>Understand</h3>
-            <p>
-                Review the circumstances and available information surrounding the suspected incident.
-            </p>
-        </div>
-
-        <div class="process-card">
-            <div class="number">2</div>
-            <h3>Document</h3>
-            <p>
-                Organize transaction records, communications, screenshots, wallet addresses, and other relevant evidence.
-            </p>
-        </div>
-
-        <div class="process-card">
-            <div class="number">3</div>
-            <h3>Analyze</h3>
-            <p>
-                Examine publicly available blockchain information and explain relevant findings and limitations.
-            </p>
-        </div>
-
-        <div class="process-card">
-            <div class="number">4</div>
-            <h3>Identify Next Steps</h3>
-            <p>
-                Identify appropriate reporting, investigative, security, legal, or professional referral options.
-            </p>
-        </div>
-
-    </div>
-
-</div>
-
-</section><!-- FRAUD AWARENESS --><section class="awareness"><div class="container">
-
-    <div class="section-title">
-
-        <h2>Scam & Fraud Awareness</h2>
-
-        <p>
-            Understanding common tactics can help individuals recognize warning signs and avoid further losses.
-        </p>
-
-    </div>
-
-    <div class="awareness-grid">
-
-        <div class="awareness-card">
-            <h3>Phishing</h3>
-            <p>
-                Fake websites, messages, emails, or links may be designed to obtain sensitive information or gain unauthorized access to accounts.
-            </p>
-        </div>
-
-        <div class="awareness-card">
-            <h3>Fake Investment Platforms</h3>
-            <p>
-                Fraudulent platforms may display fabricated balances, profits, or withdrawal requirements to persuade victims to send additional funds.
-            </p>
-        </div>
-
-        <div class="awareness-card">
-            <h3>Impersonation</h3>
-            <p>
-                Scammers may impersonate companies, professionals, customer-support representatives, or other trusted individuals.
-            </p>
-        </div>
-
-        <div class="awareness-card">
-            <h3>Romance & Social Engineering Scams</h3>
-            <p>
-                Criminals may build trust online before introducing financial requests, investment opportunities, or cryptocurrency transfers.
-            </p>
-        </div>
-
-    </div>
-
-</div>
-
-</section><!-- SECURITY --><section class="security"><div class="container">
-
-    <div class="section-title">
-
-        <h2>Protect Your Remaining Digital Assets</h2>
-
-        <p>
-            If you believe you have been targeted by a cryptocurrency scam, protecting remaining assets should be a priority.
-        </p>
-
-    </div>
-
-    <div class="security-list">
-
-        <div>
-            <strong>Never share your recovery phrase or private key.</strong>
-            Legitimate investigators and advisors should not need credentials that provide direct control of your assets.
-        </div>
-
-        <div>
-            <strong>Be cautious of recovery scams.</strong>
-            Fraudsters sometimes target previous victims by promising guaranteed recovery in exchange for additional payments or sensitive information.
-        </div>
-
-        <div>
-            <strong>Preserve evidence.</strong>
-            Keep transaction IDs, wallet addresses, communications, screenshots, dates, platform information, and other relevant records.
-        </div>
-
-        <div>
-            <strong>Do not send additional funds simply because someone promises recovery.</strong>
-            Verify the identity, credentials, and legitimacy of anyone offering professional assistance.
-        </div>
-
-    </div>
-
-</div>
-
-</section><!-- DISCLAIMER --><section class="disclaimer"><div class="container disclaimer-box">
-
-    <h2>Important Notice</h2>
-
-    <p>
-        TrustGuard Blockchain Intelligence does not guarantee the recovery of lost cryptocurrency or promise that funds can be returned.
-    </p>
-
-    <p>
-        Blockchain transactions are generally irreversible. Blockchain analysis may provide useful information about transactions and wallet activity, but it does not by itself guarantee identification of the person controlling an address or recovery of funds.
-    </p>
-
-    <p>
-        We do not request private keys, wallet recovery phrases, passwords, authentication codes, or other credentials that could provide access to digital assets.
-    </p>
-
-    <p>
-        Where appropriate, clients may be directed toward qualified lawyers, cybersecurity professionals, blockchain-forensics specialists, cryptocurrency exchanges, or relevant authorities.
-    </p>
-
-</div>
-
-</section><!-- FAQ --><section id="faq"><div class="container">
-
-    <div class="section-title">
-
-        <h2>Frequently Asked Questions</h2>
-
-        <p>
-            Important information about our approach to digital-asset fraud cases.
-        </p>
-
-    </div>
-
-    <div class="faq">
-
-        <details>
-            <summary>Can TrustGuard Blockchain Intelligence guarantee recovery?</summary>
-            <p>
-                No. Recovery cannot be guaranteed. Our role is to help clients understand available evidence, blockchain activity, security concerns, legitimate reporting channels, and possible investigative or legal avenues.
-            </p>
-        </details>
-
-        <details>
-            <summary>Do you need my private key or wallet recovery phrase?</summary>
-            <p>
-                No. Never provide your private key, seed phrase, recovery phrase, password, or authentication code to someone claiming to investigate or recover your cryptocurrency.
-            </p>
-        </details>
-
-        <details>
-            <summary>What information may be useful for an assessment?</summary>
-            <p>
-                Depending on the situation, useful information may include transaction IDs, wallet addresses, relevant communications, screenshots, dates, platform information, and other records connected to the incident.
-            </p>
-        </details>
-
-        <details>
-            <summary>Can blockchain analysis identify a person?</summary>
-            <p>
-                Blockchain data can provide information about transactions and addresses, but an address does not automatically reveal the identity of the person controlling it. Additional evidence or professional investigation may be required.
-            </p>
-        </details>
-
-        <details>
-            <summary>What happens after an assessment?</summary>
-            <p>
-                Depending on the available information, clients may receive an explanation of relevant findings and possible reporting, investigative, security, legal, or professional referral options.
-            </p>
-        </details>
-
-        <details>
-            <summary>Are recovery-related procedures always possible?</summary>
-            <p>
-                No. The available options depend on the facts of the case, available evidence, transaction history, jurisdiction, the parties involved, and the actions available to relevant professionals, platforms, or authorities.
-            </p>
-        </details>
-
-    </div>
-
-</div>
-
-</section><!-- CONTACT --><section class="contact" id="contact"><div class="container">
-
-    <h2>Contact TrustGuard Blockchain Intelligence</h2>
-
-    <p>
-        If you need help understanding a suspected cryptocurrency fraud incident, transaction history, digital evidence, security concern, or possible reporting and recovery avenues, contact us for further information.
-    </p>
-
-    <div class="contact-buttons">
-
-        <a class="contact-button"
-           href="mailto:trustguardblockchainintelligen@gmail.com">
-            Email Us
-        </a>
-
-        <a class="contact-button"
-           href="https://t.me/trustguardblockchainintelligence"
-           target="_blank"
-           rel="noopener noreferrer">
-            Contact Us on Telegram
-        </a>
-
-    </div>
-
-    <p style="margin-top: 25px;">
-        trustguardblockchainintelligen@gmail.com
-    </p>
-
-</div>
-
-</section><!-- FOOTER --><footer><div class="container">
-
-    <p>
-        © 2026 TrustGuard Blockchain Intelligence. All rights reserved.
-    </p>
-
-    <p style="margin-top: 8px;">
-        Digital-asset fraud analysis, victim support, security guidance, and recovery and reporting advisory.
-    </p>
-
-</div>
-
-</footer></body>
+</body>
 </html>
